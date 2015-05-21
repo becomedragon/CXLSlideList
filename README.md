@@ -1,6 +1,10 @@
 # CXLSlideList
 a light weight and easy to use tableview with slide effect.
-<img src="https://raw.githubusercontent.com/romaonthego/RESideMenu/master/Demo.gif?2" alt="RESideMenu Screenshot" width="320" height="568" />
+
+
+<img src="https://github.com/becomedragon/CXLSlideList/blob/master/Slide.gif?raw=true" alt="CXLSlideList Screenshot" width="370" height="686"/>
+
+----
 # Requirements
 * Xcode 6 or higher
 
