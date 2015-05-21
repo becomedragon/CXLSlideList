@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "MainTableViewController.h"
+#import "SecondTableViewController.h"
+#import "ThirdTableViewController.h"
+#import "CXLSlideListViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +20,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window =[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    MainTableViewController * mainTable = [[MainTableViewController alloc] init];
+    SecondTableViewController * secondTable = [[SecondTableViewController alloc] init];
+    ThirdTableViewController * thirdTable = [[ThirdTableViewController alloc] init];
+    
+    CXLSlideListViewController * cxlSlideListController = [[CXLSlideListViewController alloc] initWithMainTableViewController:mainTable secondTableViewController:secondTable thirdTableViewController:thirdTable];
+    
+    self.window.rootViewController = cxlSlideListController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

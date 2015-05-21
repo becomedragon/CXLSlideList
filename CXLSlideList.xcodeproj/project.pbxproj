@@ -10,11 +10,13 @@
 		2154509A1B032F8D005A8A2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 215450991B032F8D005A8A2A /* main.m */; };
 		2154509D1B032F8D005A8A2A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2154509C1B032F8D005A8A2A /* AppDelegate.m */; };
 		215450A01B032F8D005A8A2A /* CXLSlideList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2154509E1B032F8D005A8A2A /* CXLSlideList.xcdatamodeld */; };
-		215450A31B032F8D005A8A2A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215450A21B032F8D005A8A2A /* ViewController.m */; };
-		215450A61B032F8D005A8A2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 215450A41B032F8D005A8A2A /* Main.storyboard */; };
 		215450A81B032F8D005A8A2A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 215450A71B032F8D005A8A2A /* Images.xcassets */; };
 		215450AB1B032F8D005A8A2A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 215450A91B032F8D005A8A2A /* LaunchScreen.xib */; };
 		215450B71B032F8D005A8A2A /* CXLSlideListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 215450B61B032F8D005A8A2A /* CXLSlideListTests.m */; };
+		215450C31B032FCC005A8A2A /* CXLSlideListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215450C21B032FCC005A8A2A /* CXLSlideListViewController.m */; };
+		215450C81B048209005A8A2A /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215450C71B048209005A8A2A /* MainTableViewController.m */; };
+		215450CB1B04821A005A8A2A /* SecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215450CA1B04821A005A8A2A /* SecondTableViewController.m */; };
+		215450CE1B048225005A8A2A /* ThirdTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215450CD1B048225005A8A2A /* ThirdTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +36,20 @@
 		2154509B1B032F8D005A8A2A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2154509C1B032F8D005A8A2A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2154509F1B032F8D005A8A2A /* CXLSlideList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CXLSlideList.xcdatamodel; sourceTree = "<group>"; };
-		215450A11B032F8D005A8A2A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		215450A21B032F8D005A8A2A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		215450A51B032F8D005A8A2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		215450A71B032F8D005A8A2A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		215450AA1B032F8D005A8A2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		215450B01B032F8D005A8A2A /* CXLSlideListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CXLSlideListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		215450B51B032F8D005A8A2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		215450B61B032F8D005A8A2A /* CXLSlideListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLSlideListTests.m; sourceTree = "<group>"; };
+		215450C11B032FCC005A8A2A /* CXLSlideListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXLSlideListViewController.h; sourceTree = "<group>"; };
+		215450C21B032FCC005A8A2A /* CXLSlideListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXLSlideListViewController.m; sourceTree = "<group>"; };
+		215450C41B04780E005A8A2A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		215450C61B048209005A8A2A /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		215450C71B048209005A8A2A /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		215450C91B04821A005A8A2A /* SecondTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondTableViewController.h; sourceTree = "<group>"; };
+		215450CA1B04821A005A8A2A /* SecondTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondTableViewController.m; sourceTree = "<group>"; };
+		215450CC1B048225005A8A2A /* ThirdTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdTableViewController.h; sourceTree = "<group>"; };
+		215450CD1B048225005A8A2A /* ThirdTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +93,8 @@
 			children = (
 				2154509B1B032F8D005A8A2A /* AppDelegate.h */,
 				2154509C1B032F8D005A8A2A /* AppDelegate.m */,
-				215450A11B032F8D005A8A2A /* ViewController.h */,
-				215450A21B032F8D005A8A2A /* ViewController.m */,
-				215450A41B032F8D005A8A2A /* Main.storyboard */,
+				215450C51B0481E6005A8A2A /* Example */,
+				215450C01B032FB9005A8A2A /* CXLSlideList */,
 				215450A71B032F8D005A8A2A /* Images.xcassets */,
 				215450A91B032F8D005A8A2A /* LaunchScreen.xib */,
 				2154509E1B032F8D005A8A2A /* CXLSlideList.xcdatamodeld */,
@@ -99,6 +106,7 @@
 		215450971B032F8D005A8A2A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				215450C41B04780E005A8A2A /* PrefixHeader.pch */,
 				215450981B032F8D005A8A2A /* Info.plist */,
 				215450991B032F8D005A8A2A /* main.m */,
 			);
@@ -120,6 +128,28 @@
 				215450B51B032F8D005A8A2A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		215450C01B032FB9005A8A2A /* CXLSlideList */ = {
+			isa = PBXGroup;
+			children = (
+				215450C11B032FCC005A8A2A /* CXLSlideListViewController.h */,
+				215450C21B032FCC005A8A2A /* CXLSlideListViewController.m */,
+			);
+			path = CXLSlideList;
+			sourceTree = "<group>";
+		};
+		215450C51B0481E6005A8A2A /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				215450C61B048209005A8A2A /* MainTableViewController.h */,
+				215450C71B048209005A8A2A /* MainTableViewController.m */,
+				215450C91B04821A005A8A2A /* SecondTableViewController.h */,
+				215450CA1B04821A005A8A2A /* SecondTableViewController.m */,
+				215450CC1B048225005A8A2A /* ThirdTableViewController.h */,
+				215450CD1B048225005A8A2A /* ThirdTableViewController.m */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +201,7 @@
 				TargetAttributes = {
 					215450931B032F8D005A8A2A = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 52KTBFLJDB;
 					};
 					215450AF1B032F8D005A8A2A = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -202,7 +233,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				215450A61B032F8D005A8A2A /* Main.storyboard in Resources */,
 				215450AB1B032F8D005A8A2A /* LaunchScreen.xib in Resources */,
 				215450A81B032F8D005A8A2A /* Images.xcassets in Resources */,
 			);
@@ -222,10 +252,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215450CE1B048225005A8A2A /* ThirdTableViewController.m in Sources */,
 				2154509D1B032F8D005A8A2A /* AppDelegate.m in Sources */,
 				215450A01B032F8D005A8A2A /* CXLSlideList.xcdatamodeld in Sources */,
-				215450A31B032F8D005A8A2A /* ViewController.m in Sources */,
+				215450C31B032FCC005A8A2A /* CXLSlideListViewController.m in Sources */,
+				215450C81B048209005A8A2A /* MainTableViewController.m in Sources */,
 				2154509A1B032F8D005A8A2A /* main.m in Sources */,
+				215450CB1B04821A005A8A2A /* SecondTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,14 +281,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		215450A41B032F8D005A8A2A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				215450A51B032F8D005A8A2A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		215450A91B032F8D005A8A2A /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,6 +317,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = CXLSlideList/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -334,6 +360,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = CXLSlideList/PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -351,9 +378,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CXLSlideList/PrefixHeader.pch;
 				INFOPLIST_FILE = CXLSlideList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -361,9 +396,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = CXLSlideList/PrefixHeader.pch;
 				INFOPLIST_FILE = CXLSlideList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -420,6 +462,7 @@
 				215450BC1B032F8D005A8A2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		215450BD1B032F8D005A8A2A /* Build configuration list for PBXNativeTarget "CXLSlideListTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +471,7 @@
 				215450BF1B032F8D005A8A2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
