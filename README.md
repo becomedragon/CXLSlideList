@@ -84,3 +84,7 @@ Here is some useful Class method provide by `CXLSlideList`:
 
 
 The detail useage can be found in `Example`
+
+Ps:
+
+if your have any advise,Pls contact with: becomedragonlong@gmail.com
