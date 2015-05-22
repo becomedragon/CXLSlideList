@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.summary      = "a light weight and easy to use tableview slide effect."
 
   s.homepage     = "https://github.com/becomedragon/CXLSlideList"
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = 'MIT'
   s.author       = { "Becomedragon Cheng" => "becomedragonlong@gmail.com" }
   s.platform     = :ios, "7.0"
   s.ios.deployment_target = "7.0"
