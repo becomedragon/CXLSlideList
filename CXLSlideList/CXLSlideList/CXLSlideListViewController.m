@@ -8,6 +8,8 @@
 
 #import "CXLSlideListViewController.h"
 
+#define Main_Screen_Width [UIScreen mainScreen].bounds.size.width
+#define Main_Screen_Height [UIScreen mainScreen].bounds.size.height
 @interface CXLSlideListViewController ()<UITableViewDelegate>
 
 @property (nonatomic,strong)UITableViewController *mainTableViewController;
