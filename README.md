@@ -58,7 +58,20 @@ In your AppDelegate's `- (BOOL)application:(UIApplication *)application didFinis
     [self.window makeKeyAndVisible];
  
 
-TableView's datasource is implement by your file, delegate is implement by CXLSlideList. Here is some useful Class method:
+TableView's datasource is implement by your file, delegate is implement by CXLSlideList.
+
+you just need to implement tableview's datasource,but you should addObserver in your file, when the tableview's click and slide event notification post:
+
+    //main tableView click & slide Notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:CXLDidClickMainTableViewCellNotification object:nil];
+    
+    //second tableivew click & slide Notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:CXLDidClickMainTableViewCellNotification object:nil];
+    
+    //Third tableview click Notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotification:) name:CXLDidClickSecondTableViewCellNotification object:nil];
+    
+Here is some useful Class method provide by `CXLSlideList`:
 
     //Get Index
     +(NSIndexPath *)getMainTableViewIndexPath;

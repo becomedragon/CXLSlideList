@@ -100,7 +100,8 @@ static CGFloat secondTableToThirdTableGap;
     else if (tableView == self.secondTableViewController.tableView){
         [self slideThirdTableViewOutAtIndexPath:indexPath];
     }else{
-        
+        _thirdIndexPath = indexPath;
+        [[NSNotificationCenter defaultCenter] postNotificationName:CXLDidClickThirdTableViewCellNotification object:self];
     }
 }
 

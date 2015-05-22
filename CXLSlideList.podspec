@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CXLSlideList"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "a light weight and easy to use tableview slide effect."
 
   s.homepage     = "https://github.com/becomedragon/CXLSlideList"
