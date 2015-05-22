@@ -8,6 +8,8 @@
 
 #import "CXLSlideListViewController.h"
 
+#define Main_Screen_Width [UIScreen mainScreen].bounds.size.width
+#define Main_Screen_Height [UIScreen mainScreen].bounds.size.height
 @interface CXLSlideListViewController ()<UITableViewDelegate>
 
 @property (nonatomic,strong)UITableViewController *mainTableViewController;
@@ -73,19 +75,19 @@ static CGFloat secondTableToThirdTableGap;
 
 #pragma mark - Resize TableView 
 -(void)resizeMainTableViewController{
-    [self.mainTableViewController.tableView setFrame:CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height)];
+    [self.mainTableViewController.tableView setFrame:CGRectMake(0, 0,Main_Screen_Width,Main_Screen_Height)];
     [self.view addSubview:self.mainTableViewController.tableView];
     self.mainTableViewController.tableView.delegate = self;
 }
 
 -(void)resizeSecondTableViewController{
-    [self.secondTableViewController.tableView setFrame:CGRectMake([UIScreen mainScreen].bounds.size.width, 0, [UIScreen mainScreen].bounds.size.width-mainTableToSecondTableGap, [UIScreen mainScreen].bounds.size.height)];
+    [self.secondTableViewController.tableView setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width-mainTableToSecondTableGap, Main_Screen_Height)];
     [self.view addSubview:self.secondTableViewController.tableView];
     self.secondTableViewController.tableView.delegate = self;
 }
 
 -(void)resizeThirdTableViewController{
-    [self.thirdTableViewcontroller.tableView setFrame:CGRectMake([UIScreen mainScreen].bounds.size.width, 0, [UIScreen mainScreen].bounds.size.width-mainTableToSecondTableGap-secondTableToThirdTableGap, [UIScreen mainScreen].bounds.size.height)];
+    [self.thirdTableViewcontroller.tableView setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width-mainTableToSecondTableGap-secondTableToThirdTableGap, Main_Screen_Height)];
     [self.view addSubview:self.thirdTableViewcontroller.tableView];
     self.thirdTableViewcontroller.tableView.delegate = self;
 }
@@ -109,9 +111,9 @@ static CGFloat secondTableToThirdTableGap;
     [[NSNotificationCenter defaultCenter] postNotificationName:CXLDidClickMainTableViewCellNotification object:self];
     
     [UIView animateWithDuration:0.5 animations:^{
-        [self.secondTableViewController.tableView setFrame:CGRectMake(mainTableToSecondTableGap, 0, [UIScreen mainScreen].bounds.size.width-mainTableToSecondTableGap, [UIScreen mainScreen].bounds.size.height)];
+        [self.secondTableViewController.tableView setFrame:CGRectMake(mainTableToSecondTableGap, 0, Main_Screen_Width-mainTableToSecondTableGap, Main_Screen_Height)];
     } completion:^(BOOL finished) {
-       [self.thirdTableViewcontroller.tableView setFrame:CGRectMake([UIScreen mainScreen].bounds.size.width, 0, [UIScreen mainScreen].bounds.size.width-mainTableToSecondTableGap-secondTableToThirdTableGap, [UIScreen mainScreen].bounds.size.height)];
+       [self.thirdTableViewcontroller.tableView setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width-mainTableToSecondTableGap-secondTableToThirdTableGap, Main_Screen_Height)];
     }];
 }
 
@@ -120,19 +122,19 @@ static CGFloat secondTableToThirdTableGap;
     [[NSNotificationCenter defaultCenter] postNotificationName:CXLDidClickSecondTableViewCellNotification object:self];
     
     [UIView animateWithDuration:0.5 animations:^{
-        [self.thirdTableViewcontroller.tableView setFrame:CGRectMake(mainTableToSecondTableGap+secondTableToThirdTableGap, 0, [UIScreen mainScreen].bounds.size.width-mainTableToSecondTableGap-secondTableToThirdTableGap, [UIScreen mainScreen].bounds.size.height)];
+        [self.thirdTableViewcontroller.tableView setFrame:CGRectMake(mainTableToSecondTableGap+secondTableToThirdTableGap, 0, Main_Screen_Width-mainTableToSecondTableGap-secondTableToThirdTableGap, Main_Screen_Height)];
     }];
 }
 
 -(void)slideSecondTableViewIn{
   [UIView animateWithDuration:0.5 animations:^{
-      [self.secondTableViewController.tableView setFrame:CGRectMake([UIScreen mainScreen].bounds.size.width, 0, [UIScreen mainScreen].bounds.size.width-mainTableToSecondTableGap, [UIScreen mainScreen].bounds.size.height)];
+      [self.secondTableViewController.tableView setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width-mainTableToSecondTableGap, Main_Screen_Height)];
   }];
 }
 
 -(void)slideThirdTableViewIn{
   [UIView animateWithDuration:0.5 animations:^{
-      [self.thirdTableViewcontroller.tableView setFrame:CGRectMake([UIScreen mainScreen].bounds.size.width, 0, [UIScreen mainScreen].bounds.size.width-mainTableToSecondTableGap-secondTableToThirdTableGap, [UIScreen mainScreen].bounds.size.height)];
+      [self.thirdTableViewcontroller.tableView setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width-mainTableToSecondTableGap-secondTableToThirdTableGap, Main_Screen_Height)];
   }];
 }
 
@@ -166,7 +168,7 @@ static CGFloat secondTableToThirdTableGap;
 #pragma mark - table view frame
 -(BOOL)isSecondTableViewOut{
     CGFloat offX = self.secondTableViewController.tableView.frame.origin.x;
-    if (offX < [UIScreen mainScreen].bounds.size.width) {
+    if (offX < Main_Screen_Width) {
         return YES;
     }
     return NO;
@@ -174,7 +176,7 @@ static CGFloat secondTableToThirdTableGap;
 
 -(BOOL)isThirdTableViewOut{
     CGFloat offX = self.thirdTableViewcontroller.tableView.frame.origin.x;
-    if (offX < [UIScreen mainScreen].bounds.size.width) {
+    if (offX < Main_Screen_Width) {
         return YES;
     }
     return NO;
