@@ -17,8 +17,8 @@ Pod::Spec.new do |s|
   s.author       = { "Becomedragon Cheng" => "becomedragonlong@gmail.com" }
   s.platform     = :ios, "7.0"
   s.ios.deployment_target = "7.0"
-  s.source       = { :git => "https://github.com/becomedragon/CXLSlideList.git", :commit => "ffedb843465225d34a5d1a4d1096ce2601d53b16" }
+  s.source       = { :git => "https://github.com/becomedragon/CXLSlideList.git", :tag => s.version}
   s.source_files  = 'CXLSlideList/CXLSlideList/*.{h,m}'
   s.requires_arc = true
-
+  
 end
