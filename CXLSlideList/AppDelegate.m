@@ -26,6 +26,13 @@
     SecondTableViewController * secondTable = [[SecondTableViewController alloc] init];
     ThirdTableViewController * thirdTable = [[ThirdTableViewController alloc] init];
     
+    //just main table view
+    //CXLSlideListViewController * cxlSlideListController = [[CXLSlideListViewController alloc] initWithMainTableViewController:mainTable secondTableViewController:nil thirdTableViewController:nil];
+    
+    //third tableview is nil
+    //CXLSlideListViewController * cxlSlideListController = [[CXLSlideListViewController alloc] initWithMainTableViewController:mainTable secondTableViewController:secondTable thirdTableViewController:nil];
+    
+    //three table view
     CXLSlideListViewController * cxlSlideListController = [[CXLSlideListViewController alloc] initWithMainTableViewController:mainTable secondTableViewController:secondTable thirdTableViewController:thirdTable];
     
     self.window.rootViewController = cxlSlideListController;

@@ -36,6 +36,7 @@ static CGFloat secondTableToThirdTableGap;
         _secondTableViewController = secondTableViewController;
         _thirdTableViewcontroller = thirdTableViewController;
         
+        //set Default indexPath value
         NSUInteger indexes[] = {0,0};
         _mainIndexPath = [[NSIndexPath alloc] initWithIndexes:indexes length:2];
         _secondIndexPath = [[NSIndexPath alloc] initWithIndexes:indexes length:2];
@@ -92,6 +93,31 @@ static CGFloat secondTableToThirdTableGap;
     self.thirdTableViewcontroller.tableView.delegate = self;
 }
 
+
+#pragma mark - is table view out
+-(BOOL)isSecondTableViewOut{
+    if (!self.secondTableViewController) {
+        return NO;
+    }
+    CGFloat offX = self.secondTableViewController.tableView.frame.origin.x;
+    if (offX < Main_Screen_Width) {
+        return YES;
+    }
+   
+    return NO;
+}
+
+-(BOOL)isThirdTableViewOut{
+    if (!self.thirdTableViewcontroller) {
+        return NO;
+    }
+    CGFloat offX = self.thirdTableViewcontroller.tableView.frame.origin.x;
+    if (offX < Main_Screen_Width) {
+        return YES;
+    }
+    return NO;
+}
+
 #pragma mark - TableView Delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView == self.mainTableViewController.tableView) {
@@ -103,40 +129,6 @@ static CGFloat secondTableToThirdTableGap;
         _thirdIndexPath = indexPath;
         [[NSNotificationCenter defaultCenter] postNotificationName:CXLDidClickThirdTableViewCellNotification object:self];
     }
-}
-
-
-#pragma mark - Slide TableView In&Out
--(void)slideSecondTableViewOutAtIndexPath:(NSIndexPath *)indexPath{
-    _mainIndexPath = indexPath;
-    [[NSNotificationCenter defaultCenter] postNotificationName:CXLDidClickMainTableViewCellNotification object:self];
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.secondTableViewController.tableView setFrame:CGRectMake(mainTableToSecondTableGap, 0, Main_Screen_Width-mainTableToSecondTableGap, Main_Screen_Height)];
-    } completion:^(BOOL finished) {
-       [self.thirdTableViewcontroller.tableView setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width-mainTableToSecondTableGap-secondTableToThirdTableGap, Main_Screen_Height)];
-    }];
-}
-
--(void)slideThirdTableViewOutAtIndexPath:(NSIndexPath *)indexPath{
-    _secondIndexPath = indexPath;
-    [[NSNotificationCenter defaultCenter] postNotificationName:CXLDidClickSecondTableViewCellNotification object:self];
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        [self.thirdTableViewcontroller.tableView setFrame:CGRectMake(mainTableToSecondTableGap+secondTableToThirdTableGap, 0, Main_Screen_Width-mainTableToSecondTableGap-secondTableToThirdTableGap, Main_Screen_Height)];
-    }];
-}
-
--(void)slideSecondTableViewIn{
-  [UIView animateWithDuration:0.5 animations:^{
-      [self.secondTableViewController.tableView setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width-mainTableToSecondTableGap, Main_Screen_Height)];
-  }];
-}
-
--(void)slideThirdTableViewIn{
-  [UIView animateWithDuration:0.5 animations:^{
-      [self.thirdTableViewcontroller.tableView setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width-mainTableToSecondTableGap-secondTableToThirdTableGap, Main_Screen_Height)];
-  }];
 }
 
 #pragma mark - Guesture
@@ -152,7 +144,7 @@ static CGFloat secondTableToThirdTableGap;
     }else{
         return;
     }
-
+    
 }
 
 -(void)swipToLeftGuesture:(UISwipeGestureRecognizer *)swipGuesture{
@@ -165,23 +157,50 @@ static CGFloat secondTableToThirdTableGap;
     }
 }
 
-
-#pragma mark - table view frame
--(BOOL)isSecondTableViewOut{
-    CGFloat offX = self.secondTableViewController.tableView.frame.origin.x;
-    if (offX < Main_Screen_Width) {
-        return YES;
-    }
-    return NO;
+#pragma mark - Slide TableView In&Out
+-(void)slideSecondTableViewOutAtIndexPath:(NSIndexPath *)indexPath{
+    
+    _mainIndexPath = indexPath;
+    [[NSNotificationCenter defaultCenter] postNotificationName:CXLDidClickMainTableViewCellNotification object:self];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        if (self.secondTableViewController) {
+            [self.secondTableViewController.tableView setFrame:CGRectMake(mainTableToSecondTableGap, 0, Main_Screen_Width-mainTableToSecondTableGap, Main_Screen_Height)];
+        }
+    } completion:^(BOOL finished) {
+        if (self.thirdTableViewcontroller) {
+            [self.thirdTableViewcontroller.tableView setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width-mainTableToSecondTableGap-secondTableToThirdTableGap, Main_Screen_Height)];
+        }
+    }];
 }
 
--(BOOL)isThirdTableViewOut{
-    CGFloat offX = self.thirdTableViewcontroller.tableView.frame.origin.x;
-    if (offX < Main_Screen_Width) {
-        return YES;
-    }
-    return NO;
+-(void)slideThirdTableViewOutAtIndexPath:(NSIndexPath *)indexPath{
+    _secondIndexPath = indexPath;
+    [[NSNotificationCenter defaultCenter] postNotificationName:CXLDidClickSecondTableViewCellNotification object:self];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        if (self.thirdTableViewcontroller) {
+         [self.thirdTableViewcontroller.tableView setFrame:CGRectMake(mainTableToSecondTableGap+secondTableToThirdTableGap, 0, Main_Screen_Width-mainTableToSecondTableGap-secondTableToThirdTableGap, Main_Screen_Height)];
+        }
+    }];
 }
+
+-(void)slideSecondTableViewIn{
+  [UIView animateWithDuration:0.5 animations:^{
+      if (self.secondTableViewController) {
+          [self.secondTableViewController.tableView setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width-mainTableToSecondTableGap, Main_Screen_Height)];
+      }
+  }];
+}
+
+-(void)slideThirdTableViewIn{
+  [UIView animateWithDuration:0.5 animations:^{
+      if (self.thirdTableViewcontroller) {
+          [self.thirdTableViewcontroller.tableView setFrame:CGRectMake(Main_Screen_Width, 0, Main_Screen_Width-mainTableToSecondTableGap-secondTableToThirdTableGap, Main_Screen_Height)];
+      }
+  }];
+}
+
 
 #pragma mark - Get IndexPath
 +(NSIndexPath *)getMainTableViewIndexPath{
